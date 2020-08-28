@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mã Giảm Giá</title>
+    <!--Disable page zoom-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
+    <!--Boostrap CSS and Custom CSS-->
+    <!--<link href="public/assets/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="public/assets/css/custom/voucher.list.css" rel="stylesheet" type="text/css">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="public/assets/css/materialize.css"
+          media="screen,projection"/>
+
+</head>
+<body>
+<div class="container">
+
+    <div id="voucher" class="tab-pane fade">
+        <div id="v-n-used" class="v-list-wrapper">
+
+            <!--Đây là voucher chưa được sử dụng-->
+            <div class="voucher-element" id="" data-id="{{id}}">
+                <div class="v-check"><span class="font-icon icon-tick_v2 tick"></span></div>
+                <div class="v-wrapper">
+                    <div class="v-poster"><img src="public/assets/images/base/Logo_PhucLong_square.jpg" alt="Logo"/></div>
+                    <div class="v-divider"><div class="v-d-half-circle top"></div><div class="v-d-half-circle bottom"></div></div>
+                    <div class="v-body font-msg">
+                        <div class="v-name font-v-name">Giảm 100% cho đơn hàng từ 100k Giảm 20K cho đơn hàng</div>
+                        <div class="info-wrapper">
+                            <div class="v-date font-v-date">Còn 32 ngày</div>
+                            <div class="v-use-now font-v-use-now">Dùng ngay</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Đây là voucher đã được sử dụng-->
+            <div class="voucher-element used" id="" data-id="{{id}}">
+                <div class="v-check"><span class="font-icon icon-tick_v2 tick"></span></div>
+                <div class="v-wrapper">
+                    <div class="v-poster"><img src="public/assets/images/base/Logo_PhucLong_square.jpg" alt="Logo"/></div>
+                    <div class="v-divider"><div class="v-d-half-circle top"></div><div class="v-d-half-circle bottom"></div></div>
+                    <div class="v-body font-msg">
+                        <div class="v-name font-v-name">Giảm 100% cho đơn hàng từ 100k Giảm 20K cho đơn hàng</div>
+                        <div class="info-wrapper">
+                            <div class="v-date font-v-date">Hết hạn sử dụng</div>
+                            <div class="v-use-now font-v-use-now">Dùng ngay</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="public/assets/js/jquery.js"></script>
+<script type="text/javascript" src="public/assets/js/materialize.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+#voucher {
+    width: 100%;
+    padding-top: 20px;
+    .v-list-wrapper {
+        .voucher-element {
+
+            &.used {
+                opacity: 0.4;
+                pointer-events: none;
+            }
+            position: relative;
+            pointer-events: all;
+            cursor: pointer;
+            transition: transform 200ms ease;
+            * {
+                pointer-events: none;
+            }
+            .v-check {
+                position: absolute;
+                top: calc(~'50% - 15px');
+                left: 8px;
+                width: 30px;
+                height: 30px;
+                margin: 0;
+                border: 1.5px solid #ba8b00;
+                border-radius: 50%;
+                opacity: 0;
+                transition: opacity 200ms ease;
+                pointer-events: all;
+                .tick {
+                    opacity: 0;
+                    color: saddlebrown;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                &.checked {
+                    background-color: blue;
+                    border-color: transparent;
+                    .tick {
+                        opacity: 1;
+                    }
+                }
+            }
+            .v-wrapper {
+                width: 100%;
+                min-height: 110px;
+                background-color: white;
+                margin-bottom: 15px;
+                position: relative;
+                border-radius: 8px;
+                box-shadow: 0px 2px 12px 0 rgba(0,0,0,.1);
+                .v-poster {
+                    width: 80px;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    img {
+                        width: 80px;
+                        height: 80px;
+                        position: absolute;
+                        top: 50%;
+                        left: 15px;
+                        border-radius: 6px;
+                        transform: translateY(-50%);
+                    }
+                }
+                .v-divider {
+                    width: 30px;
+                    top: 0;
+                    bottom: 0;
+                    left: 95px;
+                    position: absolute;
+                    .v-d-half-circle {
+                        position: absolute;
+                        width: 16px;
+                        height: 8px;
+                        left: 7px;
+                        &.top {
+                            top: 0;
+                            background-color: #EEF2F7;
+                            border-bottom-left-radius: 8px;
+                            border-bottom-right-radius: 8px;
+                            box-shadow: inset 2px -2px 4px 0px rgba(0,0,0,0.1);
+                        }
+                        &.bottom {
+                            bottom: 0;
+                            background-color: #EEF2F7;
+                            border-top-left-radius: 8px;
+                            border-top-right-radius: 8px;
+                            box-shadow: inset 2px 2px 4px 0px rgba(0,0,0,0.1);
+                        }
+                    }
+                }
+                .v-body {
+                    width: 100%;
+                    height: 100%;
+                    padding: 18px 15px 18px 125px;
+                    line-height: 20px;
+                    .v-name {
+                        width: 100%;
+                        font-weight: 600;
+                        color: #24272B;
+                        margin-bottom: 6px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2; /* number of lines to show */
+                        -webkit-box-orient: vertical;
+                    }
+                    .info-wrapper {
+                        position: relative;
+                        top: 10px;
+                        width: 100%;
+                        height: 30px;
+                        .v-date {
+                            width: 50%;
+                            color: #727F8C;
+                            margin-bottom: 6px;
+                            left: 0;
+                            font-size: 12px;
+                            float: left;
+
+                        }
+                        .v-use-now {
+                            width: 50%;
+                            color: #0A84FF;
+                            margin-bottom: 6px;
+                            right: 0;
+                            font-size: 14px;
+                            float: right;
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+            .v-badge {
+                position: absolute;
+                line-height: 18px;
+                padding: 2px 8px;
+                top: 10px;
+                left: -4px;
+                box-shadow: 0 2px 1px 0 rgba(0,0,0,.1);
+            }
+            .v-flag {
+                position: absolute;
+                top: 27px;
+                left: -3px;
+                width: 5px;
+                height: 5px;
+                transform: rotate(45deg);
+            }
+        }
+        &.edit {
+            .v-check {
+                opacity: 1;
+            }
+            .voucher-element {
+                transform: translateX(50px);
+                .v-check {
+                    transform: translateX(-50px);
+                }
+            }
+        }
+        &.disable {
+            * {
+                pointer-events: none;
+            }
+        }
+    }
+    .blk-title {
+        width: 100%;
+        margin-bottom: 8px;
+        display: flex;
+        .lbl {
+            width: 70%;
+            color: saddlebrown;
+            margin-top: 2px;
+            display: block;
+        }
+        .btn-update, .btn-done {
+            width: 30%;
+            text-align: right;
+            color: black;
+            display: block;
+            &.disable {
+                pointer-events: none;
+                color: saddlebrown;
+            }
+        }
+    }
+    #v-n-used {
+        .voucher-element {
+            .v-wrapper {
+                .v-divider {
+                    background-image: linear-gradient(to top, #EEF2F7 50%, rgba(255, 255, 255, 0) 0%);
+                    background-size: 1px 12px;
+                    background-repeat: repeat-y;
+                    background-position: center;
+                }
+            }
+            .v-badge {
+                color: saddlebrown;
+                background-color: saddlebrown;
+            }
+            .v-flag {
+                background-color: saddlebrown;
+            }
+        }
+    }
+}
